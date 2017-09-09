@@ -1,0 +1,27 @@
+{
+  "name": "doforu",
+  "version": "1.0.0",
+  "description": "DoForU, website for renovation needs.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JerePallaskorpi/doforu.git"
+  },
+  "author": "Jere Pallaskorpi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JerePallaskorpi/doforu/issues"
+  },
+  "homepage": "https://github.com/JerePallaskorpi/doforu#readme",
+  "dependencies": {
+    "body-parser": "^1.18.0",
+    "express": "^4.15.4",
+    "jade": "^1.11.0",
+    "nib": "^1.1.2",
+    "stylus": "^0.54.5",
+    "vue": "^2.4.2"
+  }
+}

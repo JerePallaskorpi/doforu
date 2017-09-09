@@ -1,5 +1,8 @@
 {
   "development": {
-    "port": 3400
+    "port": 3333
+  },
+  "paths": {
+    "public": "/client/public"
   }
 }

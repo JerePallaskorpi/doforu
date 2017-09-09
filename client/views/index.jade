@@ -1,0 +1,9 @@
+extends partials/layout
+
+block content
+  h3.centered Full-Stack Javascript Boilerplate
+  p.centered Easier to get started on a new project: good folder structure and many useful things pre-installed.
+  p.centered v1.0
+  div.contentBox(v-for="package in packages")
+    h3 {{package.name}}
+    p {{package.description}}

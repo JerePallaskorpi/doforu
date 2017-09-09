@@ -1,0 +1,34 @@
+@import "imports/variables.styl"
+@import "imports/header.styl"
+@import "imports/footer.styl"
+
+body
+  color black
+  background-color backgroundColor
+  font fontSize fontFamily
+  margin 0
+  padding 0
+
+a
+  text-decoration none
+  color black
+  &:hover
+    color orange
+
+#content
+  margin 50px auto
+  padding paddingDefault
+  max-width 700px
+
+.contentBox
+  background-color white
+  box-shadow 0 1px 1px rgba(0, 0, 0, 0.5);
+  margin-top 20px
+  padding paddingDefault
+  transition 0.3s
+  &:hover
+    background-color black
+    color white
+
+.centered
+  text-align center

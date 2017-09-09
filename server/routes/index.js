@@ -4,8 +4,8 @@ const express = require("express"),
 			router	= express.Router();
 
 // Landing page
-router.get("/", function(req, res){
-    res.render("index", {asd: "lmaooo"});
+router.get("/", (req, res) => {
+    res.render("index");
 });
 
 // Exports

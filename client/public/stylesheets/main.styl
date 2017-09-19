@@ -1,6 +1,7 @@
 @import "imports/variables.styl"
 @import "imports/header.styl"
 @import "imports/footer.styl"
+@import "imports/defaults.styl"
 
 body
   color black
@@ -11,9 +12,25 @@ body
 
 a
   text-decoration none
-  color black
+  color blue
   &:hover
-    color orange
+    color black
+
+button
+  background-color black
+  color white
+  border 0
+  padding 10px
+  &:focus
+    outline none
+
+input
+  padding 10px
+  border 0
+  transition 0.2s
+  &:focus
+    outline none
+    box-shadow inset 0 0 0 2px blue
 
 #content
   margin 50px auto

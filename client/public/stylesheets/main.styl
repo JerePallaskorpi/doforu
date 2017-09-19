@@ -23,6 +23,11 @@ button
   padding 10px
   &:focus
     outline none
+  &:hover
+    background-color black
+    color white
+    cursor pointer
+    
 
 input
   padding 10px
@@ -49,3 +54,20 @@ input
 
 .centered
   text-align center
+
+.loginBox
+  transition 0.5s
+  z-index 100
+  width 900px
+  height 700px
+  background white
+  box-shadow 0 1px 1px rgba(0,0,0,0.5)
+  margin 0 auto
+  position fixed
+  top 50%
+  left 50%
+  margin-left -450px
+  margin-top -350px
+
+.hidden
+  visibility hidden

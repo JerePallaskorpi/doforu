@@ -1,8 +1,7 @@
-/*jshint esversion: 6 */
-
 const app = new Vue({
   el: "#content",
   data: {
+    loginBox: "hidden",
     message: "asddasdas",
     packages: [
       { name: "Node", description: "https://nodejs.org/en/"},

@@ -1,6 +1,7 @@
 extends partials/layout
 
 block content
-  h1 SEevices rhere !!
   each result in results
-    p= result.name
+    div.contentBox
+      h1= result.name
+      p= result.description

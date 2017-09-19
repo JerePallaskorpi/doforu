@@ -3,12 +3,21 @@ extends partials/layout
 block content
   div#topContainer.centered
     h1 Löydä paikalliset kodinhuolto ja remontin tekijät samasta paikasta
-    form(action="/" method="POST")
+    form(action="/services" method="POST")
       input(name="searchName" placeholder="Huoltotarve")
-      input(placeholder="Paikkakunta")
+      input(placeholder="Paikkakunta" @click="loginBox = 'loginBox'")
       button.blue Hae Palvelua
       button.green 24/7 Päivystys
   hr
   div#bottomContainer.centered
     h1 Ajankohtaista juuri nyt
     p Image 1 | Image 2 | Image 3
+
+  div.centered(:class="loginBox")
+    h3 Login Box
+    form(action="/register" method="POST")
+      input(name="registerEmail" placeholder="sähköposti")
+      input(name="registerFirstName" placeholder="etunimi")
+      input(name="registerLastName" placeholder="sukunimi")
+      input(name="registerPassword" placeholder="salasana")
+      input(type="submit" value="Lmao")

@@ -170,3 +170,5 @@ ALTER TABLE `service_visit` ADD CONSTRAINT `service_visit_fk0` FOREIGN KEY (`use
 ALTER TABLE `service_visit` ADD CONSTRAINT `service_visit_fk1` FOREIGN KEY (`service_id`) REFERENCES `service`(`id`);
 
 ALTER TABLE `user_detail` ADD CONSTRAINT `user_detail_fk0` FOREIGN KEY (`user_id`) REFERENCES `user`(`id`);
+
+ALTER TABLE user ALTER COLUMN password

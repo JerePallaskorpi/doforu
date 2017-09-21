@@ -1,8 +1,8 @@
 @import "imports/variables.styl"
+@import "imports/defaults.styl"
 @import "imports/header.styl"
 @import "imports/footer.styl"
-@import "imports/defaults.styl"
-
+  
 body
   color black
   background-color backgroundColor
@@ -12,7 +12,7 @@ body
 
 a
   text-decoration none
-  color blue
+  color main
   &:hover
     color black
 
@@ -21,53 +21,103 @@ button
   color white
   border 0
   padding 10px
+  margin-left 5px
   &:focus
     outline none
   &:hover
     background-color black
     color white
     cursor pointer
-    
-
+  
 input
+  background white
   padding 10px
   border 0
   transition 0.2s
   &:focus
     outline none
-    box-shadow inset 0 0 0 2px blue
-
+    box-shadow inset 0 0 0 2px main
+select
+  padding 5px
+  border 0
+  box-shadow 0 1px 1px opa5
+  
 #content
   margin 50px auto
   padding paddingDefault
   max-width 700px
 
+#order
+  float right
+  margin-top -35px
+  span
+    padding 0 10px
+
+// Service Cards
 .contentBox
   background-color white
-  box-shadow 0 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow 0 1px 1px opa5
   margin-top 20px
   padding paddingDefault
-  transition 0.3s
+  position relative
+  width 510px
+  height 120px
+  padding-left 180px
+  border-radius 2px
+  color black
+  .reliable
+    position absolute
+    background-color yellow
+    color black
+    top 0
+    left 0
+    font-weight bold
+    padding 5px
+    text-align center
+    font-size 0.9em
+  .price
+    position absolute
+    top paddingDefault
+    right paddingDefault
+    font-size 1.1em
+    font-weight bold
+    color main
+  .location
+    position absolute
+    bottom paddingDefault
+    left 180px
+    font-weight bold
+    font-size 0.8em
+  .provider
+    position absolute
+    top 40px
+    left 180px
+    color opa5
+    font-size 0.9em
+  .review
+    position absolute
+    bottom paddingDefault
+    right paddingDefault
+    i
+      font-size 1.1em
+      padding-right 5px
+    .ratingAmount
+      color opa5
+  .description
+    position absolute
+    top 25px
+    max-width 400px
+    color opa5
+  .logo
+    position absolute
+    top paddingDefault
+    left paddingDefault
+    height 120px
+    width 150px
+    border 1px solid opa5
+  .originalPrice
+    color opa5
+    text-decoration line-through
   &:hover
-    background-color black
-    color white
-
-.centered
-  text-align center
-
-.loginBox
-  transition 0.5s
-  z-index 100
-  width 900px
-  height 700px
-  background white
-  box-shadow 0 1px 1px rgba(0,0,0,0.5)
-  margin 0 auto
-  position fixed
-  top 50%
-  left 50%
-  margin-left -450px
-  margin-top -350px
-
-.hidden
-  visibility hidden
+    cursor pointer
+    box-shadow 0 2px 2px opa5

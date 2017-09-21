@@ -1,7 +1,31 @@
 extends partials/layout
 
 block content
+  form(action="/services" method="GET")
+    input(name="searchName" placeholder="Hae palvelua")
+  p Hakusanalla #[strong #{searchName.name}] löytyi #[strong #{resultAmount}] palvelua.
+  div#order
+    span Lajittelu: 
+    select
+      option #[i.fa.fa-chevron-down] Suosituimmat ensin
+      option #[i.fa.fa-chevron-down] Uusin ensin
+      option #[i.fa.fa-chevron-down] Korkein arvostelu
+      option #[i.fa.fa-chevron-down] Alhaisin arvostelu
   each result in results
-    div.contentBox
-      h1= result.name
-      p= result.description
+    a(href="/services/" + result.service_id)
+      div.contentBox
+        strong #{result.service_name}
+        p.description #{result.service_description}
+        span.price #{result.price/2} € #[span.originalPrice #{result.price} €]
+        span.location #[i.fa.fa-briefcase] #{result.provider_name} &nbsp;&nbsp; #[i.fa.fa-map-marker] #{result.city}
+        div.review
+          span 
+            - for(var i = 0; i < 5; i++)
+              - if (Math.round(result.rating) > i)
+                i.fa.fa-star
+              - else
+                i.fa.fa-star-o
+          span #{result.rating} 
+          span.ratingAmount (#{result.rating_amount})
+        div.logo
+

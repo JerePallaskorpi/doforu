@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
   head
-    title Expr Jade Vue Layout
+    title Doforu
     link(href="/stylesheets/main.css", rel="stylesheet")
     link(href="https://fonts.googleapis.com/css?family=Lato", rel="stylesheet")
     link(href="/assets/font-awesome.min.css", rel="stylesheet")
@@ -13,15 +13,41 @@ html(lang="en")
     section#header
       strong #[a(href="/") Doforu] 
       ul
-        li #[a(href="#") Miksi huoltaa taloa?] 
-        li #[a(href="#") Kirjaudu sisään]
+        li.loginShow #[a #[i.fa.fa-unlock-alt] Kirjaudu]
+
+        // Login box
+        div#registerBox.centered.hidden
+          h3 Luo tunnus
+          form(action="/register" method="POST")
+            input(name="registerEmail" placeholder="sähköposti")
+            br
+            input(name="registerFirstName" placeholder="etunimi")
+            br  
+            input(name="registerLastName" placeholder="sukunimi")
+            br
+            br
+            input(type="password" name="registerPassword" placeholder="salasana")
+            br
+            input(type="password" name="registerPasswordAgain" placeholder="salasana uudelleen")
+            br
+            button.blue Rekisteröidy
+        div#loginBox.centered.hidden
+          h3 Kirjaudu sisään
+          form(action="/login" method="POST")
+            input(name="loginEmail" placeholder="sähköposti")
+            br
+            input(type="password" name="loginPassword" placeholder="salasana")
+            br
+            button.blue Kirjaudu
+            hr
+            p.registerShow Luo tunnus
 
     // Content
     section#content
       block content
   
     // Footer
-    section#footer
-      p Created by Jere Pallaskorpi, 2017
+    //- section#footer
+    //-   p Demo Prototype
     
   script(src="/scripts/vue.js")

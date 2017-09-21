@@ -1,3 +1,26 @@
+.blue {
+  background-color: #2185d0;
+}
+.green {
+  background-color: #21ba45;
+}
+.fa.fa-star {
+  color: #f4c150;
+  padding: 0 2px;
+}
+.fa.fa-star-o {
+  color: #f4c150;
+  padding: 0 2px;
+}
+.fa.fa-star-half-o {
+  color: #f4c150;
+}
+.hidden {
+  visibility: hidden;
+}
+.centered {
+  text-align: center;
+}
 #header {
   background-color: #fff;
   box-shadow: 0 1px 1px rgba(0,0,0,0.5);
@@ -7,6 +30,7 @@
   left: 0;
   padding: 10px;
   box-sizing: border-box;
+  z-index: 10;
 }
 #header strong {
   font-size: 1.2em;
@@ -17,7 +41,6 @@
 }
 #header ul {
   color: #2185d0;
-  text-align: right;
   position: absolute;
   top: -5px;
   right: 10px;
@@ -26,10 +49,46 @@
   display: inline;
   margin: 0;
   padding: 0 10px;
+  user-select: none;
+}
+#header ul li:hover {
+  cursor: pointer;
+}
+#registerBox,
+#loginBox {
+  border-radius: 5px;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+  margin: 0 auto;
+  position: fixed;
+  top: 50px;
+  right: 10px;
+  margin-left: -200px;
+}
+#registerBox button,
+#loginBox button {
+  width: 290px;
+  height: 50px;
+  border-radius: 2px;
+  margin: 15px 5px 5px 5px;
+}
+#registerBox input,
+#loginBox input {
+  margin: 1px;
+  width: 270px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+  background: #f4f4f4;
+  transition: 0s;
+}
+#registerBox input:focus,
+#loginBox input:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 2px #2185d0;
 }
 #footer {
   text-align: center;
-  padding: 20px;
+  padding: 10px;
   background-color: #333;
   width: 100%;
   margin: 0;
@@ -39,15 +98,6 @@
   position: absolute;
   bottom: 0;
   left: 0;
-}
-.centered {
-  text-align: centered;
-}
-.blue {
-  background-color: #2185d0;
-}
-.green {
-  background-color: #21ba45;
 }
 body {
   color: #333;
@@ -68,6 +118,7 @@ button {
   color: #fff;
   border: 0;
   padding: 10px;
+  margin-left: 5px;
 }
 button:focus {
   outline: none;
@@ -78,6 +129,7 @@ button:hover {
   cursor: pointer;
 }
 input {
+  background: #fff;
   padding: 10px;
   border: 0;
   transition: 0.2s;
@@ -86,39 +138,99 @@ input:focus {
   outline: none;
   box-shadow: inset 0 0 0 2px #2185d0;
 }
+select {
+  padding: 5px;
+  border: 0;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
 #content {
   margin: 50px auto;
-  padding: 20px;
+  padding: 10px;
   max-width: 700px;
+}
+#order {
+  float: right;
+  margin-top: -35px;
+}
+#order span {
+  padding: 0 10px;
 }
 .contentBox {
   background-color: #fff;
   box-shadow: 0 1px 1px rgba(0,0,0,0.5);
   margin-top: 20px;
-  padding: 20px;
-  transition: 0.3s;
+  padding: 10px;
+  position: relative;
+  width: 510px;
+  height: 120px;
+  padding-left: 180px;
+  border-radius: 2px;
+  color: #333;
+}
+.contentBox .reliable {
+  position: absolute;
+  background-color: #f4c150;
+  color: #333;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+  font-size: 0.9em;
+}
+.contentBox .price {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #2185d0;
+}
+.contentBox .location {
+  position: absolute;
+  bottom: 10px;
+  left: 180px;
+  font-weight: bold;
+  font-size: 0.8em;
+}
+.contentBox .provider {
+  position: absolute;
+  top: 40px;
+  left: 180px;
+  color: rgba(0,0,0,0.5);
+  font-size: 0.9em;
+}
+.contentBox .review {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+.contentBox .review i {
+  font-size: 1.1em;
+  padding-right: 5px;
+}
+.contentBox .review .ratingAmount {
+  color: rgba(0,0,0,0.5);
+}
+.contentBox .description {
+  position: absolute;
+  top: 25px;
+  max-width: 400px;
+  color: rgba(0,0,0,0.5);
+}
+.contentBox .logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 120px;
+  width: 150px;
+  border: 1px solid rgba(0,0,0,0.5);
+}
+.contentBox .originalPrice {
+  color: rgba(0,0,0,0.5);
+  text-decoration: line-through;
 }
 .contentBox:hover {
-  background-color: #333;
-  color: #fff;
-}
-.centered {
-  text-align: center;
-}
-.loginBox {
-  transition: 0.5s;
-  z-index: 100;
-  width: 900px;
-  height: 700px;
-  background: #fff;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.5);
-  margin: 0 auto;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-left: -450px;
-  margin-top: -350px;
-}
-.hidden {
-  visibility: hidden;
+  cursor: pointer;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.5);
 }

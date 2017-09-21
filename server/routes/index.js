@@ -1,6 +1,6 @@
 
-const 	express = require("express"),
-		router	= express.Router();
+const express = require("express"),
+		  router	= express.Router();
 
 // Landing page
 router.get("/", (req, res) => {

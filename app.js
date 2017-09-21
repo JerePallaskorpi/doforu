@@ -1,18 +1,19 @@
+
 // Dependencies
-const express     = require("express"),
-			app         = express(),
-      stylus      = require("stylus"),
-      nib         = require("nib"),
-      bodyParser  = require("body-parser"),
-      mysql       = require("mysql"),
-      sqlConnection = require("./server/modules/sql"),
-      config      = require("./config.json");
+const express       = require("express"),
+			app           = express(),
+      stylus        = require("stylus"),
+      nib           = require("nib"),
+      bodyParser    = require("body-parser"),
+      config        = require("./config.json");
 
 // Require Routes
-const indexRoute    = require("./server/routes/index"),
-      registerRoute = require("./server/routes/register");
+const indexRoute          = require("./server/routes/index"),
+      servicesRoute       = require("./server/routes/services"),
+      serviceDetailRoute  = require("./server/routes/serviceDetail");
+      registerRoute       = require("./server/routes/register");
 
-// Stylus Compiler
+// Stylus Compile
 const compileStylus = (str, path) => {
   return stylus(str).set("filename", path).use(nib());
 };
@@ -30,37 +31,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // Define Routes
 app.use("/", indexRoute);
 app.use("/", registerRoute);
+app.use("/", servicesRoute);
+app.use("/", serviceDetailRoute);
 
 // Server Connection
 app.listen(config.development.port, () => {
    console.log("App running at localhost:" + config.development.port);
-});
-
-// SQL insert test
-app.post("/services", (req, res) => {
-  if (req.body.searchName != "") {
-    const insertToSearch = "INSERT INTO search SET ?";
-    const findServices = "SELECT * FROM service WHERE name LIKE ?";
-
-    const name = {name: req.body.searchName};
-
-    sqlConnection.query(insertToSearch, name, (error) => {
-      if (error) { 
-        throw error; 
-      }
-    });
-
-    sqlConnection.query(findServices, ["%" + name.name + "%"], (error, results) => {
-      if (error) { 
-        throw error; 
-      } else { 
-        res.render("services", {results: results}); 
-      }
-    });
-    
-  } else {
-    res.redirect("back");
-  }
 });
 
 // Default route

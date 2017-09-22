@@ -31,10 +31,10 @@ doforu
 ### Client
 
 - Public: Public files
--- Assets: Downloaded assets e.g. Font Awesome
--- Images: Public images
--- Scripts: Javascript code for client
--- Stylesheets: All css (stylus) files
+  - Assets: Downloaded assets e.g. Font Awesome
+  - Images: Public images
+  - Scripts: Javascript code for client
+  - Stylesheets: All css (stylus) files
 
 - Views: All the html (jade) files that are being rendered from express routes
 

@@ -1,4 +1,4 @@
-# Doforu
+# Doforu v0.2
 
 Makes it easier to find local renovation services.
 
@@ -27,6 +27,23 @@ doforu
   ├── queries/
   ├── routes/
 ```
+
+### Client
+
+- Public: Public files
+-- Assets: Downloaded assets e.g. Font Awesome
+-- Images: Public images
+-- Scripts: Javascript code for client
+-- Stylesheets: All css (stylus) files
+
+- Views: All the html (jade) files that are being rendered from express routes
+
+### Server
+
+- Middleware: Middlewares like user authentication check
+- Modules: Smaller modules that are used in multiple files
+- Queries: All the SQL queries as files
+- Routes: All routes splitted into separated files
 
 ## Packages, Librarys & Frameworks
 

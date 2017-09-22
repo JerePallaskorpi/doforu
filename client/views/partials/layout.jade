@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
   head
-    title Expr Jade Vue Layout
+    title Doforu
     link(href="/stylesheets/main.css", rel="stylesheet")
     link(href="https://fonts.googleapis.com/css?family=Lato", rel="stylesheet")
     link(href="/assets/font-awesome.min.css", rel="stylesheet")
@@ -11,16 +11,52 @@ html(lang="en")
 
     // Header
     section#header
-      a(href="#")
-        i.fa.fa-superpowers
-         strong  Project StarterKit
+      strong #[a(href="/") Doforu] 
+      ul
+        li.loginShow #[a #[i.fa.fa-unlock-alt] Kirjaudu]
+
+        // Login box
+        div#registerBox.centered.hidden
+          h3 Luo tunnus
+          form(action="/register" method="POST")
+            input.inputText(name="registerEmail" placeholder="sähköposti")
+            br
+            input.inputText(name="registerFirstName" placeholder="etunimi")
+            br  
+            input.inputText(name="registerLastName" placeholder="sukunimi")
+            br
+            br
+            input.inputText(type="password" name="registerPassword" placeholder="salasana")
+            br
+            input.inputText(type="password" name="registerPasswordAgain" placeholder="salasana uudelleen")
+            br
+            br
+            div.left
+              label
+                input.inputCheckBox(type="checkbox")
+                | Palveluntarjoaja
+            br
+            button.blue Rekisteröidy
+            hr
+            p.changeLogin Minulla on jo tili
+
+        div#loginBox.centered.hidden
+          h3 Kirjaudu sisään
+          form(action="/login" method="POST")
+            input.inputText(name="loginEmail" placeholder="sähköposti")
+            br
+            input.inputText(type="password" name="loginPassword" placeholder="salasana")
+            br
+            button.blue Kirjaudu
+            hr
+            p.changeRegister Minulla ei ole vielä tiliä
 
     // Content
     section#content
       block content
   
-  // Footer
-  section#footer
-    p Created by Jere Pallaskorpi, 2017
+    // Footer
+    //- section#footer
+    //-   p Demo Prototype
     
-  script(src="/scripts/vue.js")
+  script(src="/scripts/scripts.js")

@@ -1,9 +1,20 @@
 extends partials/layout
 
 block content
-  h3.centered Full-Stack Javascript Boilerplate
-  p.centered Easier to get started on a new project: good folder structure and many useful things pre-installed.
-  p.centered v1.0
-  div.contentBox(v-for="package in packages")
-    h3 {{package.name}}
-    p {{package.description}}
+  div#topContainer.centered
+    h1 Löydä paikalliset kodinhuolto ja remontin tekijät samasta paikasta
+    form(action="/services" method="GET")
+      input#searchName(name="searchName" placeholder="Hae palvelua")
+      input(@input="changeValue()" placeholder="Paikkakunta")
+      button.blue Hae Palvelua
+      button.green 24/7 Päivystys
+  div#bottomContainer.centered
+    h1 Ajankohtaista juuri nyt 
+    p Passport.js kirjautuminen + cookie
+    p Esimerkkidataa tableihin
+    p Lisää kahvia
+    p Tää vue juttu: {{ value }}
+    p Palveluiden lisätiedot table + näyttö
+    p Käyttäjäasetuksien hallinta
+
+  script(src="/scripts/index.js")

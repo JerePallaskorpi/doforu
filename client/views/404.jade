@@ -1,0 +1,10 @@
+extends partials/layout
+
+block content
+  div.centered
+    h1 Oho, tällä sivulla ei ole mitään nähtävää..
+    p Tarkista osoite tai suorita uusi haku palvelulle
+    form(action="/services" method="GET")
+      input#searchName(name="searchName" placeholder="Hae palvelua")
+
+  script(src="/scripts/index.js")

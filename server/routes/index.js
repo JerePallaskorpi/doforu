@@ -1,7 +1,6 @@
-/*jshint esversion: 6 */
 
 const express = require("express"),
-			router	= express.Router();
+		  router	= express.Router();
 
 // Landing page
 router.get("/", (req, res) => {

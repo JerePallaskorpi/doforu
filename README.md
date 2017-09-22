@@ -2,6 +2,10 @@
 
 Makes it easier to find local renovation services.
 
+## Database Structure
+
+![Alt text](https://i.imgur.com/8XYO628.png "Database Structure v0.2")
+
 ## Folder Structure
 
 ```

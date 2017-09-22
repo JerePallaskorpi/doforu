@@ -2,8 +2,9 @@ extends partials/layout
 
 block content
   form(action="/services" method="GET")
-    input(name="searchName" placeholder="Hae palvelua")
-  p Hakusanalla #[strong #{searchName.name}] löytyi #[strong #{resultAmount}] palvelua.
+    input#searchNameServices(name="searchName" placeholder="Hae palvelua" value=searchName.name)
+    i.fa.fa-close.clearInput
+  p #{resultAmount} hakutulosta
   div#order
     span Lajittelu: 
     select
@@ -14,7 +15,7 @@ block content
   each result in results
     a(href="/services/" + result.service_id)
       div.contentBox
-        strong #{result.service_name}
+        strong.serviceName #{result.service_name}
         p.description #{result.service_description}
         span.price #{result.price/2} € #[span.originalPrice #{result.price} €]
         span.location #[i.fa.fa-briefcase] #{result.provider_name} &nbsp;&nbsp; #[i.fa.fa-map-marker] #{result.city}
@@ -28,4 +29,6 @@ block content
           span #{result.rating} 
           span.ratingAmount (#{result.rating_amount})
         div.logo
+
+  script(src="/scripts/services.js")
 

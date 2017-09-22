@@ -1,23 +1,10 @@
 
-const app = new Vue({
-  el: "#header",
-  data: {
-    styleObject: {
-      visibility: "hidden"
-    },
-
-    methods: {
-      changeVisibility() {
-        console.log("lmao");
-      }
-    }
-  }
-});
-
 var loginShow = document.querySelector(".loginShow");
-var registerShow = document.querySelector(".registerShow");
+var changeRegister = document.querySelector(".changeRegister");
+var changeLogin = document.querySelector(".changeLogin");
 var loginBox = document.querySelector("#loginBox");
 var registerBox = document.querySelector("#registerBox");
+
 
 loginShow.addEventListener("click", function() {
   if (loginBox.classList.value.indexOf("hidden") < 0 || registerBox.classList.value.indexOf("hidden") < 0) {
@@ -28,10 +15,17 @@ loginShow.addEventListener("click", function() {
   }
 });
 
-registerShow.addEventListener("click", function() {
+changeRegister.addEventListener("click", function() {
   loginBox.classList.toggle("hidden");
   registerBox.classList.toggle("hidden");
 });
 
-document.querySelector("#searchName").focus();
+changeLogin.addEventListener("click", function() {
+  loginBox.classList.toggle("hidden");
+  registerBox.classList.toggle("hidden");
+});
+
+
+
+
 

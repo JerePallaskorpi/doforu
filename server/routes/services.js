@@ -12,17 +12,20 @@ router.get("/services", (req, res) => {
     const findServices = sql.readFile("findServices");
 
     const searchName = {name: req.query.searchName};
-    const nameArray = ["%" + searchName.name + "%", "%" + searchName.name + "%"];
+    const name = "%" + searchName.name + "%";
+    const nameArray = [name, name];
 
     sql.connection.query(insertToSearch, searchName, (error) => {
       if (error) { 
-        throw error; 
+        console.log(error);
+        res.redirect("back");
       }
     });
 
     sql.connection.query(findServices, nameArray, (error, results) => {
       if (error) { 
-        throw error; 
+        console.log(error);
+        res.redirect("back");
       } else { 
 
         if (results.length > 10) {

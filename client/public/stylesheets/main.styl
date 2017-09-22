@@ -2,6 +2,7 @@
 @import "imports/defaults.styl"
 @import "imports/header.styl"
 @import "imports/footer.styl"
+@import "imports/services.styl"
   
 body
   color black
@@ -53,71 +54,7 @@ select
   span
     padding 0 10px
 
-// Service Cards
-.contentBox
-  background-color white
-  box-shadow 0 1px 1px opa5
-  margin-top 20px
-  padding paddingDefault
-  position relative
-  width 510px
-  height 120px
-  padding-left 180px
-  border-radius 2px
-  color black
-  .reliable
-    position absolute
-    background-color yellow
-    color black
-    top 0
-    left 0
-    font-weight bold
-    padding 5px
-    text-align center
-    font-size 0.9em
-  .price
-    position absolute
-    top paddingDefault
-    right paddingDefault
-    font-size 1.1em
-    font-weight bold
-    color main
-  .location
-    position absolute
-    bottom paddingDefault
-    left 180px
-    font-weight bold
-    font-size 0.8em
-  .provider
-    position absolute
-    top 40px
-    left 180px
-    color opa5
-    font-size 0.9em
-  .review
-    position absolute
-    bottom paddingDefault
-    right paddingDefault
-    i
-      font-size 1.1em
-      padding-right 5px
-    .ratingAmount
-      color opa5
-  .description
-    position absolute
-    top 25px
-    max-width 400px
-    color opa5
-  .logo
-    position absolute
-    top paddingDefault
-    left paddingDefault
-    height 120px
-    width 150px
-    border 1px solid opa5
-  .originalPrice
-    color opa5
-    text-decoration line-through
+.clearInput
+  padding-left 10px
   &:hover
     cursor pointer
-    box-shadow 0 2px 2px opa5

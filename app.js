@@ -41,5 +41,5 @@ app.listen(config.development.port, () => {
 
 // Default route
 app.get("*", (req, res) => {
-  res.redirect("back");
+  res.render("404");
 });

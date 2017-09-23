@@ -1,0 +1,34 @@
+div#registerBox.centered.hidden
+  h3 Luo tunnus
+  form(action="/register" method="POST")
+    input.inputText(name="registerEmail" placeholder="sähköposti")
+    br
+    input.inputText(name="registerFirstName" placeholder="etunimi")
+    br  
+    input.inputText(name="registerLastName" placeholder="sukunimi")
+    br
+    br
+    input.inputText(type="password" name="registerPassword" placeholder="salasana")
+    br
+    input.inputText(type="password" name="registerPasswordAgain" placeholder="salasana uudelleen")
+    br
+    br
+    div.left
+      label
+        input.inputCheckBox(type="checkbox")
+        | Palveluntarjoaja
+    br
+    button.blue Rekisteröidy
+    hr
+    p.changeLogin Minulla on jo tili
+
+div#loginBox.centered.hidden
+  h3 Kirjaudu sisään
+  form(action="/login" method="POST")
+    input.inputText(name="loginEmail" placeholder="sähköposti")
+    br
+    input.inputText(type="password" name="loginPassword" placeholder="salasana")
+    br
+    button.blue Kirjaudu
+    hr
+    p.changeRegister Minulla ei ole vielä tiliä

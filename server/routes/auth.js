@@ -32,6 +32,7 @@ router.post("/register", (req, res) => {
   });
 });
 
+// Login user
 router.post("/login", (req, res) => {
 
   const findLoginUser = sql.readFile("findLoginUser");

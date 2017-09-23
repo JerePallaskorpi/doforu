@@ -1,4 +1,3 @@
-
 var loginShow = document.querySelector(".loginShow");
 var changeRegister = document.querySelector(".changeRegister");
 var changeLogin = document.querySelector(".changeLogin");

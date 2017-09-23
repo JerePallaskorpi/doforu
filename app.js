@@ -11,14 +11,14 @@ const express       = require("express"),
 const indexRoute          = require("./server/routes/index"),
       servicesRoute       = require("./server/routes/services"),
       serviceDetailRoute  = require("./server/routes/serviceDetail");
-      registerRoute       = require("./server/routes/register");
+      authRoute           = require("./server/routes/auth");
 
 // Stylus Compile
 const compileStylus = (str, path) => {
   return stylus(str).set("filename", path).use(nib());
 };
 
-// Express Config
+// Middlewares
 app.set("views", __dirname + "/client/views");
 app.set("view engine", "jade");
 app.use(stylus.middleware({
@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // Define Routes
 app.use("/", indexRoute);
-app.use("/", registerRoute);
+app.use("/", authRoute);
 app.use("/", servicesRoute);
 app.use("/", serviceDetailRoute);
 

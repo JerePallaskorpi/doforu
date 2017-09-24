@@ -1,3 +1,7 @@
 strong #[a(href="/") Doforu] 
 ul
-  li.loginShow #[a #[i.fa.fa-unlock-alt] Kirjaudu]
+  - if (currentUser)
+    li #[i.fa.fa-user] #{currentUser.username}
+    li #[a(href="/logout") #[i.fa.fa-sign-out] Kirjaudu ulos]
+  - else 
+    li.loginShow #[a #[i.fa.fa-unlock-alt] Kirjaudu]

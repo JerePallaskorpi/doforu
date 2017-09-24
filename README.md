@@ -13,19 +13,21 @@ doforu
 │ app.js
 │ config.js
 ├── client/
-  ├── public/
-    ├── assets/
-    ├── images/
-    ├── scripts/
-    ├── stylesheets/
-      ├── imports/
-  ├── views/
-    ├── partials/
+│ ├── public/
+│ │ ├── assets/
+│ │ ├── images/
+│ │ ├── scripts/
+│ │ ├── stylesheets/
+│ │ │ ├── imports/
+│ ├── views/
+│ │ ├── partials/
 ├── server/
-  ├── middleware/
-  ├── modules/
-  ├── queries/
-  ├── routes/
+│ ├── config/
+│ │ ├── strategies/
+│ ├── middleware/
+│ ├── modules/
+│ ├── queries/
+│ ├── routes/
 ```
 
 ### Client
@@ -37,6 +39,8 @@ doforu
   - Stylesheets: All css (stylus) files
 
 - Views: All the html (jade) files that are being rendered from express routes
+  - Layout: Html layout
+  - Partials: Partials that are included in layout (header, footer etc.) 
 
 ### Server
 
@@ -44,6 +48,8 @@ doforu
 - Modules: Smaller modules that are used in multiple files
 - Queries: All the SQL queries as files
 - Routes: All routes splitted into separated files
+- Config: Configs for packages e.g. passport settings
+  - Strategies for different passport strategies (local, google auth etc.)
 
 ## Packages, Librarys & Frameworks
 
@@ -60,6 +66,9 @@ doforu
 - body-parser
 - jade
 - stylus
+- passport
+- cookie-parser
+- express-session
 
 ### Framework
 

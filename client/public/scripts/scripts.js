@@ -11,6 +11,7 @@ loginShow.addEventListener("click", function() {
     registerBox.classList.add("hidden");
   } else {
     loginBox.classList.toggle("hidden");
+    document.querySelector("#loginEmail").focus();
   }
 });
 

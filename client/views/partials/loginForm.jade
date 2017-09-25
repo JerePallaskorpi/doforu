@@ -1,16 +1,16 @@
 div#registerBox.centered.hidden
   h3 Luo tunnus
   form(action="/register" method="POST")
-    input.inputText(name="userEmail" placeholder="sähköposti")
+    input#registerEmail.inputText(name="userEmail" placeholder="sähköposti" required)
     br
-    input.inputText(name="userFirstName" placeholder="etunimi")
+    input.inputText(name="userFirstName" placeholder="etunimi" required)
     br  
-    input.inputText(name="userLastName" placeholder="sukunimi")
+    input.inputText(name="userLastName" placeholder="sukunimi" required)
     br
     br
-    input.inputText(type="password" name="userPassword" placeholder="salasana")
+    input.inputText(type="password" name="userPassword" placeholder="salasana" required)
     br
-    input.inputText(type="password" name="userPasswordAgain" placeholder="salasana uudelleen")
+    input.inputText(type="password" name="userPasswordAgain" placeholder="salasana uudelleen" required)
     br
     br
     div.left
@@ -25,9 +25,9 @@ div#registerBox.centered.hidden
 div#loginBox.centered.hidden
   h3 Kirjaudu sisään
   form(action="/login" method="POST")
-    input#loginEmail.inputText(name="userEmail" placeholder="sähköposti")
+    input#loginEmail.inputText(name="userEmail" placeholder="sähköposti" required)
     br
-    input.inputText(type="password" name="userPassword" placeholder="salasana")
+    input.inputText(type="password" name="userPassword" placeholder="salasana" required)
     br
     button.blue Kirjaudu
     hr

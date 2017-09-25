@@ -1,19 +1,20 @@
 extends layout/layout
 
 block content
-  div
-    h1 #{results.service_name}
-    h3 #{results.rating} (#{results.rating_amount} arvostelua)
-  hr
-  div
-    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sunt corporis inventore ut quisquam a eos vero dolor ullam non asperiores tempore at illum, iure, ea numquam quod iusto animi!
-  hr
-  div
-    h1 Arvostelut
-    each review in reviews
-      strong #{review.title + " " + review.rating}
-      p #{review.review_date}
-      p #{review.first_name + " " + review.last_name}
-      p #{review.description}
+  div#serviceDetail
+    div
+      h1 #{results.service_name}
+      h3 #{results.rating} (#{results.rating_amount} arvostelua)
+    hr
+    div
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sunt corporis inventore ut quisquam a eos vero dolor ullam non asperiores tempore at illum, iure, ea numquam quod iusto animi!
+    hr
+    div
+      h1 Arvostelut
+      each review in reviews
+        strong #{review.title + " " + review.rating}
+        p #{review.review_date}
+        p #{review.first_name + " " + review.last_name}
+        p #{review.description}
 
 

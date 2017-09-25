@@ -1,4 +1,5 @@
 const passport      = require("passport"),
+      sql           = require("../../modules/sql"),
       LocalStrategy = require("passport-local").Strategy;
 
 module.exports = () => {
@@ -12,11 +13,28 @@ module.exports = () => {
       password: password
     };
 
-    if (user.username == "admin") {
-      done(null, user);
-    } else {
-      done(null, false, {message: "ei"});
-    }
-    
+    const findLoginUser = sql.readFile("findLoginUser");
+
+    const loginInfo = {
+      email: username,
+      password: password
+    };
+
+    const loginArr = [loginInfo.email, loginInfo.password];
+
+    // Try to find user that matches email and password
+    sql.connection.query(findLoginUser, loginArr, (error, results) => {
+      if (error) { 
+        console.log(error);
+        done(null, false, {message: "ei"});
+      } else {
+        if (results.length > 0) {
+          done(null, user); 
+        } else {
+          done(null, false, {message: "Nothing found"});
+        }
+        
+      }
+    });    
   }));
 };

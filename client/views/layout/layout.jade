@@ -5,24 +5,32 @@ html(lang="en")
     link(href="/stylesheets/main.css", rel="stylesheet")
     link(href="https://fonts.googleapis.com/css?family=Lato", rel="stylesheet")
     link(href="/assets/font-awesome.min.css", rel="stylesheet")
-    script(src="https://unpkg.com/vue")
-    
+
   body
 
-    // Header
-    section#header
-      include ../partials/header
+    // Wrapper container
+    div#container
 
-    // Login Form
-    section#login
-      include ../partials/loginForm
+      // Header
+      section#header
+        include ../partials/header
 
-    // Content
-    section#content
-      block content
-  
-    // Footer
-    section#footer
-      include ../partials/footer
+      // Login Form
+      section#login
+        include ../partials/loginForm
+
+      // Content
+      section#content
+        block content
     
+      // Footer
+      section#footer
+        include ../partials/footer
+  
+  script(src="https://unpkg.com/axios/dist/axios.min.js")
+  script(src="https://unpkg.com/vue")
+  script(src="/scripts/vue/test.js")
   script(src="/scripts/scripts.js")
+
+
+  

@@ -3,13 +3,14 @@
 @import "imports/header.styl"
 @import "imports/footer.styl"
 @import "imports/services.styl"
-  
-body
+
+html, body
   color black
   background-color backgroundColor
   font fontSize fontFamily
   margin 0
   padding 0
+  height 100%
 
 a
   text-decoration none
@@ -30,6 +31,10 @@ button
     color white
     cursor pointer
   
+#container
+  min-height 100%
+  position relative
+  
 input
   background white
   padding 10px
@@ -44,9 +49,9 @@ select
   box-shadow 0 1px 1px opa5
   
 #content
-  margin 50px auto
-  padding paddingDefault
+  margin 50px auto 0 auto
   max-width 700px
+  padding-bottom 120px
 
 #order
   float right

@@ -8,6 +8,7 @@ const express       = require("express"),
       cookieParser  = require("cookie-parser"),
       session       = require("express-session"),
       passport      = require("passport"),
+      flash         = require("connect-flash"),
       config        = require("./config.json");
 
 // File paths
@@ -43,10 +44,13 @@ app.use(session({
   saveUninitialized: false
 }));
 require(pathConfig + "/passport")(app);
+app.use(flash());
 
 // Pass currentuser to all routes
 app.use((req, res, next) => {
    res.locals.currentUser = req.user;
+   res.locals.success = req.flash('success');
+   res.locals.error = req.flash('error');
    next();
 });
 
@@ -63,6 +67,10 @@ app.listen(config.development.port, () => {
   console.log("\r\n----------");
   console.log("App running at localhost:" + config.development.port);
   console.log("----------\r\n");
+});
+
+app.post("/todos", (req, res) => {
+  res.send(["Passport.js", "Esim dataa tableihi", "Lisää kahvia", "More vue / axios l2", "Palveluiden lisätiedot, käyttäjien hallinta"]);
 });
 
 // Default route

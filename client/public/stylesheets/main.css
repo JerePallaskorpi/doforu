@@ -36,10 +36,8 @@
   z-index: 10;
 }
 #header strong {
-  font-size: 1.2em;
+  font-size: 1.3em;
   color: #c44;
-  padding: 0;
-  margin: 0;
   text-shadow: 0 1px 1px #000;
 }
 #header ul {
@@ -97,6 +95,12 @@
 #loginBox .inputCheckBox:focus {
   box-shadow: 0 0 0 0;
 }
+#registerBox .changeRegister,
+#loginBox .changeRegister,
+#registerBox .changeLogin,
+#loginBox .changeLogin {
+  color: #c44;
+}
 #footer {
   text-align: center;
   padding: 10px;
@@ -107,7 +111,7 @@
   color: #fff;
   box-sizing: border-box;
   position: absolute;
-  height: 100px;
+  height: 150px;
   bottom: 0;
   left: 0;
 }
@@ -153,6 +157,9 @@
   color: rgba(33,33,33,0.7);
   font-size: 0.8em;
 }
+.contentBox .info .infoItem {
+  padding-right: 10px;
+}
 .contentBox .provider {
   position: absolute;
   top: 40px;
@@ -194,11 +201,104 @@
   cursor: pointer;
   box-shadow: 0 2px 2px rgba(33,33,33,0.5);
 }
+@media (max-width: 700px) {
+  .contentBox {
+    box-sizing: border-box;
+    padding: 10px;
+    width: auto;
+  }
+  .contentBox .description {
+    visibility: hidden;
+  }
+  .contentBox .logo {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+  }
+  .contentBox .serviceName {
+    position: absolute;
+    left: 120px;
+  }
+  .contentBox .info {
+    left: 120px;
+    top: 50px;
+  }
+  .contentBox .price {
+    top: 90px;
+    left: 120px;
+  }
+}
+#topContainer {
+  background: url("/images/landing_background.jpg");
+  background-position: 0% 70%;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: -60px;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  color: #fff;
+  text-shadow: 2px 2px 0 #333;
+  font-size: 1.5em;
+}
+#topContainer button {
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 40px;
+}
+#topContainer input {
+  height: 20px;
+}
+#bottomContainer {
+  position: absolute;
+  top: 350px;
+  right: 0;
+  left: 0;
+  margin: 0 100px;
+  z-index: 3;
+  background: #fff;
+}
+@media (max-width: 700px) {
+  #landingSearch {
+    width: 90%;
+    margin: 0 5%;
+  }
+  #topContainer {
+    padding: 0;
+    height: 450px;
+  }
+  #topContainer h1 {
+    margin: 20px 10px;
+  }
+  #topContainer input {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    padding: 20px 10px;
+    box-sizing: border-box;
+  }
+  #topContainer button {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+  }
+  #bottomContainer {
+    top: 350px;
+    right: 0;
+    left: 0;
+    margin: 0 100px;
+    z-index: 3;
+    background: #fff;
+    margin: 0 10px;
+  }
+}
 html,
 body {
   color: #333;
   background-color: #f4f4f4;
-  font: 1em "Lato";
+  font: 1em "Roboto";
   margin: 0;
   padding: 0;
   height: 100%;
@@ -245,9 +345,9 @@ select {
   box-shadow: 0 1px 1px rgba(33,33,33,0.5);
 }
 #content {
-  margin: 50px auto 0 auto;
+  margin: 100px auto 0 auto;
   max-width: 700px;
-  padding-bottom: 120px;
+  padding-bottom: 220px;
 }
 #order {
   float: right;
@@ -261,4 +361,9 @@ select {
 }
 .clearInput:hover {
   cursor: pointer;
+}
+@media (max-width: 700px) {
+  #content {
+    margin: 100px 20px 0 20px;
+  }
 }

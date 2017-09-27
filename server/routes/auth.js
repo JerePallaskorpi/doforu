@@ -17,7 +17,8 @@ router.post("/register", (req, res) => {
     email: req.body.userEmail,
     password: req.body.userPassword,
     first_name: req.body.userFirstName,
-    last_name: req.body.userLastName
+    last_name: req.body.userLastName,
+    provider: req.body.providerCheck ? true : false
   };
 
   sql.connection.query(insertToUser, registerInfo, (error) => {

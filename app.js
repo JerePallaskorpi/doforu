@@ -21,6 +21,7 @@ const pathConfig  = path.join(__dirname, config.paths.config);
 const indexRoute          = require(pathRoutes + "/index"),
       servicesRoute       = require(pathRoutes + "/services"),
       serviceDetailRoute  = require(pathRoutes + "/serviceDetail");
+      accountRoute        = require(pathRoutes + "/account");
       authRoute           = require(pathRoutes + "/auth");
 
 // Stylus Compile
@@ -57,6 +58,7 @@ app.use((req, res, next) => {
 // Define Routes
 app.use("/", indexRoute);
 app.use("/", authRoute);
+app.use("/account", accountRoute);
 app.use("/services/", servicesRoute);
 app.use("/services/", serviceDetailRoute);
 
@@ -70,7 +72,16 @@ app.listen(config.development.port, () => {
 });
 
 app.post("/todos", (req, res) => {
-  res.send(["Passport.js", "Esim dataa tableihi", "Lisää kahvia", "More vue / axios l2", "Palveluiden lisätiedot, käyttäjien hallinta"]);
+
+  let todos = [
+    "Passport.js (user_details / provider_details on register)", 
+    "Esim dataa tableihi", 
+    "Lisää kahvia", 
+    "More vue / axios l2", 
+    "Palveluiden lisätiedot, käyttäjien hallinta"
+  ];
+
+  res.send(todos);
 });
 
 // Default route

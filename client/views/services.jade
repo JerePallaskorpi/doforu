@@ -19,7 +19,9 @@ block content
           strong.serviceName #{result.service_name}
           p.description #{result.service_description}
           span.price #{result.price/2} € #[span.originalPrice #{result.price} €]
-          span.info #[i.fa.fa-briefcase] #{result.provider_name} #[i.fa.fa-map-marker] #{result.city}
+          span.info 
+            | #[span.infoItem #[i.fa.fa-briefcase] #{result.provider_name}]
+            | #[span.infoItem #[i.fa.fa-map-marker] #{result.city}]
           div.review
             span 
               - for(var i = 0; i < 5; i++)

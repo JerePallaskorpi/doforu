@@ -1,15 +1,14 @@
 new Vue({
-  el: "#loginBox",
+  el: "#bottomContainer",
   data: {
     todos: [],
     errors: ""
   },
 
   methods: {
-    onSubmit() {
-      axios.post("/login", this.data)
-        .then(response => this.todos = response.data)
-        .catch(alert("lol"));
+    getData() {
+      axios.post("/todos", this.data)
+        .then(response => this.todos = response.data);
     }
   },
 
@@ -17,5 +16,22 @@ new Vue({
 
 
 
+  }
+});
+
+new Vue({
+  el: "#registerBox",
+  data: {
+    provider: false
+  },
+
+  methods: {
+    isChecked() {
+      if (event.target.checked) {
+        this.provider = true;
+      } else {
+        this.provider = false;
+      }
+    }
   }
 });

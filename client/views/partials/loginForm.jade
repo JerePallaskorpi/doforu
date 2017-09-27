@@ -15,8 +15,10 @@ div#registerBox.centered.hidden
     br
     div.left
       label
-        input.inputCheckBox(type="checkbox")
+        input.inputCheckBox(type="checkbox" name="providerCheck" @click="isChecked")
         | Palveluntarjoaja
+    br
+    input.inputText(type="text" name="providerName" placeholder="Y-tunnus" v-if="provider" required)
     br
     button.blue Rekisteröidy
     hr

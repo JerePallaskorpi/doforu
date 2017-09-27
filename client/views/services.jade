@@ -24,11 +24,14 @@ block content
             | #[span.infoItem #[i.fa.fa-map-marker] #{result.city}]
           div.review
             span 
-              - for(var i = 0; i < 5; i++)
-                - if (Math.round(result.rating) > i)
-                  i.fa.fa-star
-                - else
-                  i.fa.fa-star-o
-            span #{result.rating} 
-            span.ratingAmount (#{result.rating_amount})
+              - if (result.rating_amount != 0)
+                - for(var i = 0; i < 5; i++)
+                  - if (Math.round(result.rating) > i)
+                    i.fa.fa-star
+                  - else
+                    i.fa.fa-star-o
+                span #{result.rating} 
+                span.ratingAmount (#{result.rating_amount})
+              - else
+                span Ei arvosteluja        
           div.logo

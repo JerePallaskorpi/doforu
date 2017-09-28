@@ -3,6 +3,9 @@
     "port": 3333
   },
   "paths": {
-    "public": "/client/public"
+    "public": "/client/public",
+    "routes": "/server/routes",
+    "views": "/client/views",
+    "config": "/server/config"
   }
 }

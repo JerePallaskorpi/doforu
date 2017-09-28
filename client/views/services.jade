@@ -1,34 +1,38 @@
-extends partials/layout
+extends layout/layout
 
 block content
-  form(action="/services" method="GET")
-    input#searchNameServices(name="searchName" placeholder="Hae palvelua" value=searchName.name)
-    i.fa.fa-close.clearInput
-  p #{resultAmount} hakutulosta
-  div#order
-    span Lajittelu: 
-    select
-      option #[i.fa.fa-chevron-down] Suosituimmat ensin
-      option #[i.fa.fa-chevron-down] Uusin ensin
-      option #[i.fa.fa-chevron-down] Korkein arvostelu
-      option #[i.fa.fa-chevron-down] Alhaisin arvostelu
-  each result in results
-    a(href="/services/" + result.service_id)
-      div.contentBox
-        strong.serviceName #{result.service_name}
-        p.description #{result.service_description}
-        span.price #{result.price/2} € #[span.originalPrice #{result.price} €]
-        span.location #[i.fa.fa-briefcase] #{result.provider_name} &nbsp;&nbsp; #[i.fa.fa-map-marker] #{result.city}
-        div.review
-          span 
-            - for(var i = 0; i < 5; i++)
-              - if (Math.round(result.rating) > i)
-                i.fa.fa-star
+  div#services
+    form(action="/services" method="GET")
+      input#searchNameServices(name="searchName" placeholder="Hae palvelua" value=searchName.name)
+      i.fa.fa-close.clearInput
+    p #{resultAmount} hakutulosta
+    div#order
+      span Lajittelu:
+      select
+        option #[i.fa.fa-chevron-down] Suosituimmat ensin
+        option #[i.fa.fa-chevron-down] Uusin ensin
+        option #[i.fa.fa-chevron-down] Korkein arvostelu
+        option #[i.fa.fa-chevron-down] Alhaisin arvostelu
+    each result in results
+      a(href="/services/" + result.service_id)
+        div.contentBox
+          div.ribbon #[span Luotettava]
+          strong.serviceName #{result.service_name}
+          p.description #{result.service_description}
+          span.price #{result.price/2} € #[span.originalPrice #{result.price} €]
+          span.info 
+            | #[span.infoItem #[i.fa.fa-briefcase] #{result.provider_name}]
+            | #[span.infoItem #[i.fa.fa-map-marker] #{result.city}]
+          div.review
+            span 
+              - if (result.rating_amount != 0)
+                - for(var i = 0; i < 5; i++)
+                  - if (Math.round(result.rating) > i)
+                    i.fa.fa-star
+                  - else
+                    i.fa.fa-star-o
+                span #{result.rating} 
+                span.ratingAmount (#{result.rating_amount})
               - else
-                i.fa.fa-star-o
-          span #{result.rating} 
-          span.ratingAmount (#{result.rating_amount})
-        div.logo
-
-  script(src="/scripts/services.js")
-
+                span Ei arvosteluja        
+          div.logo

@@ -1,0 +1,21 @@
+- if (userData.provider)
+  div#settingsNav
+    div#userShort
+      div#userImage 
+        span #[i.fa.fa-briefcase]
+      p#userName #{ userData.companyName.toUpperCase() }
+      p#userName #{ userData.businessId }
+    ul#navButtons
+      li #[i.fa.fa-user] Omat sivut
+      li #[i.fa.fa-address-card] Käyttäjätiedot
+      li #[i.fa.fa-tags] Palvelut
+- else
+  div#settingsNav
+    div#userShort
+      div#userImage 
+        span #{ userData.first_name.substring(0,1).toUpperCase() + userData.last_name.substring(0,1).toUpperCase() }
+      p#userName #{ userData.first_name.toUpperCase() } #{ userData.last_name.toUpperCase() }
+    ul#navButtons
+      li #[i.fa.fa-user] Omat sivut
+      li #[i.fa.fa-address-card] Käyttäjätiedot
+      li #[i.fa.fa-home] Kohteen tiedot

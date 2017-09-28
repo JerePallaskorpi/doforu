@@ -9,10 +9,8 @@
   box-sizing border-box
   z-index 10
   strong
-    font-size 1.2em
+    font-size 1.3em
     color main
-    padding 0
-    margin 0
     text-shadow 0 1px 1px rgba(0, 0, 0, 1)
   ul
     color main
@@ -41,8 +39,7 @@
     width 290px
     height 50px
     border-radius 2px
-    margin 15px 5px 5px 5px
-  
+    margin 0 5px
   .inputText
     margin 1px
     width 270px
@@ -56,4 +53,18 @@
     border-radius 0
     &:focus
       box-shadow 0 0 0 0
+  .changeRegister, .changeLogin
+    color main
+    &:hover
+      cursor pointer
+      color black
 
+@media (max-width 700px)
+
+  #registerBox, #loginBox
+    box-sizing border-box
+    width 90%
+    margin 0 auto
+    padding 0
+    left 0
+    right 0

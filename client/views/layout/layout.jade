@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+  head
+    title Doforu
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(href="/stylesheets/main.css", rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css?family=Lato|Montserrat|Open+Sans|Roboto|Jaldi", rel="stylesheet")
+    link(href="/assets/font-awesome.min.css", rel="stylesheet")
+
+  body
+
+    // Wrapper container
+    div#container
+
+      // Header
+      section#header
+        include ../partials/header
+
+      // Login Form
+      section#login
+        include ../partials/loginForm
+
+      // Content
+      section#content
+        block content
+    
+      // Footer
+      section#footer
+        include ../partials/footer
+  
+  script(src="https://unpkg.com/axios/dist/axios.min.js")
+  script(src="https://unpkg.com/vue")
+  script(src="/scripts/vue/test.js")
+  script(src="/scripts/scripts.js")
+
+
+  

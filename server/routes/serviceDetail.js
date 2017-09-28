@@ -1,4 +1,4 @@
-
+// Dependencies
 const express       = require("express"),
       mysql         = require("mysql"),
       sql           = require("../modules/sql"),
@@ -6,14 +6,15 @@ const express       = require("express"),
       path          = require("path"),
       router        = express.Router();
 
-router.get("/services/:id", (req, res) => {
+// Service detail page
+router.get("/:id", (req, res) => {
 
+  // Query variables
   const findServices = sql.readFile("findServiceDetail");
   const findServiceReviews = sql.readFile("findServiceReviews");
-
-  const searchName = {name: req.query.searchName};
   const id = req.params.id;
 
+  // Call function that will find find reviews and service details
   find_reviews(function(result) {
 
     const reviews = result;

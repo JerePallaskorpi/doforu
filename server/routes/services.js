@@ -1,4 +1,4 @@
-
+// Dependencies
 const express       = require("express"),
       mysql         = require("mysql"),
       sql           = require("../modules/sql"),
@@ -6,15 +6,18 @@ const express       = require("express"),
       path          = require("path"),
       router        = express.Router();
 
-router.get("/services", (req, res) => {
+// Show all services page
+router.get("/", (req, res) => {
   if (req.query.searchName != "") {
+
+    // Query variables
     const insertToSearch = sql.readFile("insertSearch");
     const findServices = sql.readFile("findServices");
-
     const searchName = {name: req.query.searchName};
     const name = "%" + searchName.name + "%";
     const nameArray = [name, name];
 
+    // Insert search to database
     sql.connection.query(insertToSearch, searchName, (error) => {
       if (error) { 
         console.log(error);
@@ -22,6 +25,7 @@ router.get("/services", (req, res) => {
       }
     });
 
+    // Find all the services that are found with service name or service tag
     sql.connection.query(findServices, nameArray, (error, results) => {
       if (error) { 
         console.log(error);

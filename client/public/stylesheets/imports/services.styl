@@ -4,7 +4,7 @@
   margin-top 20px
   padding paddingDefault
   position relative
-  width 510px
+  width 5paddingDefault
   height 120px
   padding-left 180px
   border-radius 2px
@@ -28,13 +28,15 @@
     font-size 1.1em
     font-weight bold
     color main
-  .location
+  .info
     position absolute
     bottom paddingDefault
     left 180px
     font-weight bold
     color opa7
     font-size 0.8em
+    .infoItem
+      padding-right paddingDefault
   .provider
     position absolute
     top 40px
@@ -68,3 +70,28 @@
   &:hover
     cursor pointer
     box-shadow 0 2px 2px opa5
+
+@media (max-width 700px)
+  
+  .contentBox
+    box-sizing border-box
+    padding paddingDefault
+    width auto
+    .description
+      visibility hidden
+    .logo
+      box-sizing border-box
+      padding paddingDefault
+      width 100px
+      height 100px
+      visibility hidden
+    .serviceName
+      position absolute
+      left paddingDefault
+      max-width 50%
+    .info
+      left paddingDefault
+      bottom paddingDefault
+    .price
+      top paddingDefault
+      right paddingDefault

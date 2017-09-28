@@ -1,20 +1,17 @@
-extends partials/layout
+extends layout/layout
 
 block content
-  div#topContainer.centered
-    h1 Löydä paikalliset kodinhuolto ja remontin tekijät samasta paikasta
-    form(action="/services" method="GET")
-      input#searchName(name="searchName" placeholder="Hae palvelua")
-      input(@input="changeValue()" placeholder="Paikkakunta")
-      button.blue Hae Palvelua
-      button.green 24/7 Päivystys
-  div#bottomContainer.centered
-    h1 Ajankohtaista juuri nyt 
-    p Passport.js kirjautuminen + cookie
-    p Esimerkkidataa tableihin
-    p Lisää kahvia
-    p Tää vue juttu: {{ value }}
-    p Palveluiden lisätiedot table + näyttö
-    p Käyttäjäasetuksien hallinta
-
-  script(src="/scripts/index.js")
+  div#landing
+    div#topContainer.centered
+      h1 Löydä paikalliset kodinhuolto ja remontin tekijät samasta paikasta
+      form(action="/services" method="GET" @submit.prevent="onSubmit")
+        div#landingSearch
+          input#searchName(name="searchName" placeholder="Hae palvelua")
+          input(@input="changeValue()" placeholder="Paikkakunta")
+          button.blue Hae Palvelua
+          button.green 24/7 Päivystys
+    //- div#bottomContainer.centered
+    //-   button(@click="getData") Ajankohtaista juuri nyt
+    //-   p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur est natus excepturi blanditiis nihil vero adipisci minima cum debitis vitae. Iste unde nemo dignissimos, obcaecati molestiae adipisci magni, suscipit dolore!
+    //-   p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur est natus excepturi blanditiis nihil vero adipisci minima cum debitis vitae. Iste unde nemo dignissimos, obcaecati molestiae adipisci magni, suscipit dolore!
+    //-   p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur est natus excepturi blanditiis nihil vero adipisci minima cum debitis vitae. Iste unde nemo dignissimos, obcaecati molestiae adipisci magni, suscipit dolore!

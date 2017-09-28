@@ -3,14 +3,22 @@
 @import "imports/header.styl"
 @import "imports/footer.styl"
 @import "imports/services.styl"
-  
-body
+@import "imports/landing.styl"
+@import "imports/user.styl"
+@import "imports/ribbon.styl"
+
+html, body
   color black
   background-color backgroundColor
   font fontSize fontFamily
   margin 0
   padding 0
+  height 100%
 
+ul
+  list-style none
+  padding 0
+  
 a
   text-decoration none
   color main
@@ -30,6 +38,10 @@ button
     color white
     cursor pointer
   
+#container
+  min-height 100%
+  position relative
+  
 input
   background white
   padding 10px
@@ -44,9 +56,9 @@ select
   box-shadow 0 1px 1px opa5
   
 #content
-  margin 50px auto
-  padding paddingDefault
+  margin 100px auto 0 auto
   max-width 700px
+  padding-bottom 220px
 
 #order
   float right
@@ -58,3 +70,17 @@ select
   padding-left 10px
   &:hover
     cursor pointer
+
+table
+  th
+    background main
+    color white
+    padding 10px
+  td
+    padding 10px
+    border 1px solid black
+
+@media (max-width 700px)
+  
+  #content
+    margin 100px 20px 0 20px  

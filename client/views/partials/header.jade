@@ -1,0 +1,13 @@
+strong #[a(href="/") Doforu] 
+ul
+  - if (currentUser)
+    li #{success}
+    li #{error}
+    - if (currentUser.provider)
+      li #[a(href="/user/services") #[i.fa.fa-tags]]
+      li #[a(href="/user/edit-account") #[i.fa.fa-gear]]
+    - else
+      li #[a(href="/user/edit-account") #[i.fa.fa-gear]]
+    li #[a(href="/logout") #[i.fa.fa-sign-out]]
+  - else 
+    li.loginShow #[a #[i.fa.fa-unlock-alt]]

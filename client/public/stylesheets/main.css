@@ -36,10 +36,8 @@
   z-index: 10;
 }
 #header strong {
-  font-size: 1.2em;
+  font-size: 1.3em;
   color: #c44;
-  padding: 0;
-  margin: 0;
   text-shadow: 0 1px 1px #000;
 }
 #header ul {
@@ -74,7 +72,7 @@
   width: 290px;
   height: 50px;
   border-radius: 2px;
-  margin: 15px 5px 5px 5px;
+  margin: 0 5px;
 }
 #registerBox .inputText,
 #loginBox .inputText {
@@ -97,16 +95,41 @@
 #loginBox .inputCheckBox:focus {
   box-shadow: 0 0 0 0;
 }
+#registerBox .changeRegister,
+#loginBox .changeRegister,
+#registerBox .changeLogin,
+#loginBox .changeLogin {
+  color: #c44;
+}
+#registerBox .changeRegister:hover,
+#loginBox .changeRegister:hover,
+#registerBox .changeLogin:hover,
+#loginBox .changeLogin:hover {
+  cursor: pointer;
+  color: #373737;
+}
+@media (max-width: 700px) {
+  #registerBox,
+  #loginBox {
+    box-sizing: border-box;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0;
+    left: 0;
+    right: 0;
+  }
+}
 #footer {
   text-align: center;
   padding: 10px;
-  background-color: #333;
+  background-color: #373737;
   width: 100%;
   margin: 0;
   box-shadow: inset 0 3px 3px rgba(0,0,0,0.5);
   color: #fff;
   box-sizing: border-box;
   position: absolute;
+  height: 150px;
   bottom: 0;
   left: 0;
 }
@@ -116,11 +139,11 @@
   margin-top: 20px;
   padding: 10px;
   position: relative;
-  width: 510px;
+  width: 5paddingDefault;
   height: 120px;
   padding-left: 180px;
   border-radius: 2px;
-  color: #333;
+  color: #373737;
 }
 .contentBox .serviceName {
   color: #c44;
@@ -128,7 +151,7 @@
 .contentBox .reliable {
   position: absolute;
   background-color: #f4c150;
-  color: #333;
+  color: #373737;
   top: 0;
   left: 0;
   font-weight: bold;
@@ -144,13 +167,16 @@
   font-weight: bold;
   color: #c44;
 }
-.contentBox .location {
+.contentBox .info {
   position: absolute;
   bottom: 10px;
   left: 180px;
   font-weight: bold;
   color: rgba(33,33,33,0.7);
   font-size: 0.8em;
+}
+.contentBox .info .infoItem {
+  padding-right: 10px;
 }
 .contentBox .provider {
   position: absolute;
@@ -193,11 +219,265 @@
   cursor: pointer;
   box-shadow: 0 2px 2px rgba(33,33,33,0.5);
 }
-body {
-  color: #333;
-  background-color: #f4f4f4;
-  font: 1em "Lato";
+@media (max-width: 700px) {
+  .contentBox {
+    box-sizing: border-box;
+    padding: 10px;
+    width: auto;
+  }
+  .contentBox .description {
+    visibility: hidden;
+  }
+  .contentBox .logo {
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100px;
+    height: 100px;
+    visibility: hidden;
+  }
+  .contentBox .serviceName {
+    position: absolute;
+    left: 10px;
+    max-width: 50%;
+  }
+  .contentBox .info {
+    left: 10px;
+    bottom: 10px;
+  }
+  .contentBox .price {
+    top: 10px;
+    right: 10px;
+  }
+}
+#landing #topContainer {
+  background: url("/images/landing_background.jpg");
+  background-position: 0% 70%;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: -60px;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  color: #fff;
+  text-shadow: 2px 2px 0 #373737;
+  font-size: 1.5em;
+}
+#landing #topContainer button {
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 40px;
+}
+#landing #topContainer input {
+  height: 20px;
+}
+#landing #bottomContainer {
+  position: absolute;
+  top: 350px;
+  right: 0;
+  left: 0;
+  margin: 0 100px;
+  z-index: 3;
+  background: #fff;
+}
+@media (max-width: 700px) {
+  #landing #landingSearch {
+    width: 90%;
+    margin: 0 5%;
+  }
+  #landing #topContainer {
+    padding: 0;
+  }
+  #landing #topContainer h1 {
+    margin: 20px 10px;
+  }
+  #landing #topContainer input {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    padding: 20px 10px;
+    box-sizing: border-box;
+  }
+  #landing #topContainer button {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+  }
+  #landing #bottomContainer {
+    top: 350px;
+    right: 0;
+    left: 0;
+    margin: 0 100px;
+    z-index: 3;
+    background: #fff;
+    margin: 0 10px;
+  }
+}
+#account {
+  position: relative;
+}
+#account #settingsHeader {
+  margin-left: 200px;
+}
+#account #settingsNav {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150px;
+}
+#account #settingsNav #navButtons {
   margin: 0;
+}
+#account #settingsNav #navButtons .currentPage {
+  background: #373737;
+  color: #fff;
+}
+#account #settingsNav li {
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #c44;
+  box-shadow: 0 1px 1px rgba(33,33,33,0.5);
+  color: #fff;
+}
+#account #settingsNav #userShort {
+  text-align: center;
+}
+#account #settingsNav #userShort #userImage {
+  height: 150px;
+  width: 150px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #373737;
+  font-size: 5em;
+  border-radius: 50%;
+  background: #373737;
+  color: #fff;
+}
+#account #settingsNav #userShort #userImage span {
+  vertical-align: middle;
+  line-height: 150px;
+}
+#account #settingsNav #userShort #userName {
+  margin: 20px 0;
+}
+#account #settingsForm {
+  box-sizing: border-box;
+  width: 500px;
+  position: absolute;
+  left: 200px;
+  top: 50px;
+  box-shadow: 0 1px 1px rgba(33,33,33,0.5);
+  background: #fff;
+  padding: 10px;
+}
+#account #settingsForm input {
+  box-sizing: border-box;
+  width: 100%;
+  background: #f4f4f4;
+  margin: 10px 0;
+}
+#account #settingsForm #topContainer {
+  text-align: center;
+}
+#account #settingsForm #bottomContainer {
+  color: #f00;
+}
+#account #settingsForm #bottomContainer .submitForm {
+  text-align: center;
+}
+#account #settingsForm #bottomContainer .submitForm button {
+  background: #c44;
+}
+.box {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  border: 1px solid #bbb;
+  background: #eee;
+}
+.ribbon {
+  position: absolute;
+  left: -5px;
+  top: -5px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+  text-align: right;
+}
+.ribbon span {
+  font-size: 10px;
+  color: #373737;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  line-height: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 100px;
+  display: block;
+  background: #79a70a;
+  background: linear-gradient(#f4c150 0%, #f4c150 100%);
+  box-shadow: 0 3px 10px -5px #000;
+  position: absolute;
+  top: 19px;
+  left: -21px;
+}
+.ribbon span::before {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid #373737;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #373737;
+}
+.ribbon span::after {
+  content: '';
+  position: absolute;
+  right: 0%;
+  top: 100%;
+  z-index: -1;
+  border-right: 3px solid #373737;
+  border-left: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #373737;
+}
+.red span {
+  background: linear-gradient(#f70505 0%, #8f0808 100%);
+}
+.red span::before {
+  border-left-color: #8f0808;
+  border-top-color: #8f0808;
+}
+.red span::after {
+  border-right-color: #8f0808;
+  border-top-color: #8f0808;
+}
+.blue span {
+  background: linear-gradient(#2989d8 0%, #1e5799 100%);
+}
+.blue span::before {
+  border-left-color: #1e5799;
+  border-top-color: #1e5799;
+}
+.blue span::after {
+  border-right-color: #1e5799;
+  border-top-color: #1e5799;
+}
+html,
+body {
+  color: #373737;
+  background-color: #f4f4f4;
+  font: 1em "Roboto";
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+ul {
+  list-style: none;
   padding: 0;
 }
 a {
@@ -205,10 +485,10 @@ a {
   color: #c44;
 }
 a:hover {
-  color: #333;
+  color: #373737;
 }
 button {
-  background-color: #333;
+  background-color: #373737;
   color: #fff;
   border: 0;
   padding: 10px;
@@ -218,9 +498,13 @@ button:focus {
   outline: none;
 }
 button:hover {
-  background-color: #333;
+  background-color: #373737;
   color: #fff;
   cursor: pointer;
+}
+#container {
+  min-height: 100%;
+  position: relative;
 }
 input {
   background: #fff;
@@ -238,9 +522,9 @@ select {
   box-shadow: 0 1px 1px rgba(33,33,33,0.5);
 }
 #content {
-  margin: 50px auto;
-  padding: 10px;
+  margin: 100px auto 0 auto;
   max-width: 700px;
+  padding-bottom: 220px;
 }
 #order {
   float: right;
@@ -254,4 +538,18 @@ select {
 }
 .clearInput:hover {
   cursor: pointer;
+}
+table th {
+  background: #c44;
+  color: #fff;
+  padding: 10px;
+}
+table td {
+  padding: 10px;
+  border: 1px solid #373737;
+}
+@media (max-width: 700px) {
+  #content {
+    margin: 100px 20px 0 20px;
+  }
 }

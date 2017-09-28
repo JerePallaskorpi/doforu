@@ -1,0 +1,15 @@
+extends ../layout/layout
+
+block content
+  h1 #{ results[0].companyName } palvelut
+  a(href="services/new") Luo uusi palvelu #[i.fa.fa-plus]
+  table
+    tr
+      th Name
+      th Description
+    each result in results
+      tr
+        td #{ result.serviceName }
+        td #{ result.serviceDescription }
+        td #[i.fa.fa-edit]
+        td #[i.fa.fa-remove]

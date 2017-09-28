@@ -1,36 +1,34 @@
 div#registerBox.centered.hidden
   h3 Luo tunnus
-  form(action="/register" method="POST")
-    input#registerEmail.inputText(name="userEmail" placeholder="sähköposti" required)
-    br
-    input.inputText(name="userFirstName" placeholder="etunimi" required)
-    br  
-    input.inputText(name="userLastName" placeholder="sukunimi" required)
-    br
-    br
-    input.inputText(type="password" name="userPassword" placeholder="salasana" required)
-    br
-    input.inputText(type="password" name="userPasswordAgain" placeholder="salasana uudelleen" required)
-    br
-    br
-    div.left
-      label
-        input.inputCheckBox(type="checkbox" name="providerCheck" @click="isChecked")
+  hr
+  form(action="/register" method="POST") 
+    ul
+      li #[input.inputCheckBox(type="checkbox" name="providerCheck" @click="isChecked")]
         | Palveluntarjoaja
-    br
-    input.inputText(type="text" name="providerName" placeholder="Y-tunnus" v-if="provider" required)
-    br
-    button.blue Rekisteröidy
+    ul
+      li #[input#registerEmail.inputText(name="userEmail" placeholder="sähköposti" required)]
+      li #[input.inputText(name="userFirstName" placeholder="etunimi" required)]
+      li #[input.inputText(name="userLastName" placeholder="sukunimi" required)]
+    ul
+      li #[input.inputText(type="password" name="userPassword" placeholder="salasana" required)]
+      li #[input.inputText(type="password" name="userPasswordAgain" placeholder="salasana uudelleen" required)]
+    ul(v-if="provider")
+      li #[input.inputText(type="text" name="businessId" placeholder="Y-tunnus" v-model="companyId" @blur="getYtunnus" required :disabled="loading")]
+      li #[p(v-show="loading" class="fa fa-spinner fa-spin")]
+      li #[input.inputText(name="companyName" v-model="companyName" v-show="companyName")]
+    hr
+    button.blue(:disabled="loading") Rekisteröidy
     hr
     p.changeLogin Minulla on jo tili
 
 div#loginBox.centered.hidden
   h3 Kirjaudu sisään
+  hr
   form(action="/login" method="POST")
-    input#loginEmail.inputText(name="userEmail" placeholder="sähköposti" required)
-    br
-    input.inputText(type="password" name="userPassword" placeholder="salasana" required)
-    br
+    ul
+      li #[input#loginEmail.inputText(name="userEmail" placeholder="sähköposti" required)]
+      li #[input.inputText(type="password" name="userPassword" placeholder="salasana" required)]
+    hr
     button.blue Kirjaudu
     hr
     p.changeRegister Minulla ei ole vielä tiliä

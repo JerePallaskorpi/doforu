@@ -1,28 +1,11 @@
 new Vue({
-  el: "#bottomContainer",
-  data: {
-    todos: [],
-    errors: ""
-  },
-
-  methods: {
-    getData() {
-      axios.post("/todos", this.data)
-        .then(response => this.todos = response.data);
-    }
-  },
-
-  mounted() {
-
-
-
-  }
-});
-
-new Vue({
   el: "#registerBox",
   data: {
-    provider: false
+    provider: false,
+    companyName: "",
+    companyId: "",
+    loading: false,
+    errors: []
   },
 
   methods: {
@@ -32,6 +15,25 @@ new Vue({
       } else {
         this.provider = false;
       }
+    },
+    getYtunnus() {
+
+      this.loading = true;
+      this.companyName = "";
+
+      axios.get("https://avoindata.prh.fi/tr/v1/" + this.companyId, this.data)
+        .then(response => {
+          this.companyName = response.data.results[0].name;
+          console.log(response);
+          this.loading = false;
+        })
+        .catch(error => {     
+          this.errors.push(error);
+          this.loading = false;
+        });
     }
+/*    registerUser() {
+      axios.post("/register").then
+    }*/
   }
 });

@@ -21,7 +21,8 @@ const pathConfig  = path.join(__dirname, config.paths.config);
 const indexRoute          = require(pathRoutes + "/index"),
       servicesRoute       = require(pathRoutes + "/services"),
       serviceDetailRoute  = require(pathRoutes + "/serviceDetail");
-      accountRoute        = require(pathRoutes + "/account");
+      userRoute           = require(pathRoutes + "/user");
+      providerRoute       = require(pathRoutes + "/provider");
       authRoute           = require(pathRoutes + "/auth");
 
 // Stylus Compile
@@ -58,11 +59,10 @@ app.use((req, res, next) => {
 // Define Routes
 app.use("/", indexRoute);
 app.use("/", authRoute);
-app.use("/account", accountRoute);
+app.use("/user", userRoute);
+app.use("/user", providerRoute);
 app.use("/services/", servicesRoute);
 app.use("/services/", serviceDetailRoute);
-
-
 
 // Server Connection
 app.listen(config.development.port, () => {

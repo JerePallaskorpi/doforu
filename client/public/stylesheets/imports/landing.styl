@@ -1,62 +1,63 @@
-#topContainer
-  background url("/images/landing_background.jpg")
-  background-position 0% 70%
-  background-size cover
-  position absolute
-  left 0
-  right 0
-  margin-top -60px
-  padding-top 100px
-  padding-bottom 200px
-  color white
-  text-shadow 2px 2px 0 black
-  font-size 1.5em
-  button
-    padding-left 30px
-    padding-right 30px
-    height 40px
-  input
-    height 20px
-  
-#bottomContainer
-  position absolute
-  top 350px
-  right 0
-  left 0
-  margin 0 100px
-  z-index 3
-  background white
-
-@media (max-width 700px)
-
-  #landingSearch
-    width 90%
-    margin 0 5%
-    
+#landing
   #topContainer
-    h1
-      margin 20px 10px
-    padding 0
-    height 450px
-    input
-      display block
-      margin 10px 0
-      width 100%
-      padding 20px 10px
-      box-sizing border-box
+    background url("/images/landing_background.jpg")
+    background-position 0% 70%
+    background-size cover
+    position absolute
+    left 0
+    right 0
+    margin-top -60px
+    padding-top 100px
+    padding-bottom 200px
+    color white
+    text-shadow 2px 2px 0 black
+    font-size 1.5em
     button
-      display block
-      margin 10px 0
-      width 100%
-      
+      padding-left 30px
+      padding-right 30px
+      height 40px
+    input
+      height 20px
+    
   #bottomContainer
+    position absolute
     top 350px
     right 0
     left 0
     margin 0 100px
     z-index 3
     background white
-    margin 0 10px
+
+@media (max-width 700px)
+
+  #landing
+    #landingSearch
+      width 90%
+      margin 0 5%
+      
+    #topContainer
+      padding 0
+      h1
+        margin 20px 10px
+      input
+        display block
+        margin 10px 0
+        width 100%
+        padding 20px 10px
+        box-sizing border-box
+      button
+        display block
+        margin 10px 0
+        width 100%
+        
+    #bottomContainer
+      top 350px
+      right 0
+      left 0
+      margin 0 100px
+      z-index 3
+      background white
+      margin 0 10px
     
   
       

@@ -2,7 +2,12 @@ strong #[a(href="/") Doforu]
 ul
   - if (currentUser)
     li #{success}
-    li #[a(href="/account") #[i.fa.fa-user] #{currentUser.username}]
-    li #[a(href="/logout") #[i.fa.fa-sign-out] Kirjaudu ulos]
+    li #{error}
+    - if (currentUser.provider)
+      li #[a(href="/user/services") #[i.fa.fa-tags]]
+      li #[a(href="/user/edit-account") #[i.fa.fa-gear]]
+    - else
+      li #[a(href="/user/edit-account") #[i.fa.fa-gear]]
+    li #[a(href="/logout") #[i.fa.fa-sign-out]]
   - else 
-    li.loginShow #[a #[i.fa.fa-unlock-alt] Kirjaudu]
+    li.loginShow #[a #[i.fa.fa-unlock-alt]]

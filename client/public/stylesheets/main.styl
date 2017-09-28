@@ -4,6 +4,8 @@
 @import "imports/footer.styl"
 @import "imports/services.styl"
 @import "imports/landing.styl"
+@import "imports/user.styl"
+@import "imports/ribbon.styl"
 
 html, body
   color black
@@ -13,6 +15,10 @@ html, body
   padding 0
   height 100%
 
+ul
+  list-style none
+  padding 0
+  
 a
   text-decoration none
   color main
@@ -64,6 +70,15 @@ select
   padding-left 10px
   &:hover
     cursor pointer
+
+table
+  th
+    background main
+    color white
+    padding 10px
+  td
+    padding 10px
+    border 1px solid black
 
 @media (max-width 700px)
   

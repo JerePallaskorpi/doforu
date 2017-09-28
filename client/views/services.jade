@@ -16,6 +16,7 @@ block content
     each result in results
       a(href="/services/" + result.service_id)
         div.contentBox
+          div.ribbon #[span Luotettava]
           strong.serviceName #{result.service_name}
           p.description #{result.service_description}
           span.price #{result.price/2} € #[span.originalPrice #{result.price} €]

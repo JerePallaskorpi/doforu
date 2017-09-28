@@ -1,0 +1,24 @@
+extends ../layout/layout
+
+block content
+  div#account
+    div#settingsHeader
+      h1 #[i.fa.fa-gear] Doforu tilisi asetukset
+    include settingsNav
+
+    div#settingsForm
+      div#topContainer
+        h1 Käyttäjätiedot
+        p Vaihda doforu tilisi tietoja
+      hr
+      div#bottomContainer
+        form
+          ul
+            li #[input(placeholder="Etunimi" value=userData.first_name)]
+            li #[input(placeholder="Sukunimi" value=userData.last_name)]
+            li #[input(placeholder="Sähköposti" value=userData.email)]
+            li #[input(placeholder="Puhelinnumero" value=userData.phone_number)]
+          hr
+          div.submitForm
+            button Tallenna
+          

@@ -6,10 +6,8 @@ block content
   table
     tr
       th Name
-      th Description
     each result in results
       tr
         td #{ result.serviceName }
-        td #{ result.serviceDescription }
-        td #[i.fa.fa-edit]
+        td #[a(href="services/" + result.serviceId + "/edit") #[i.fa.fa-edit]]
         td #[i.fa.fa-remove]

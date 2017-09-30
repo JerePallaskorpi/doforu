@@ -35,6 +35,9 @@
   box-sizing: border-box;
   z-index: 10;
 }
+#header i {
+  font-size: 1.25em;
+}
 #header strong {
   font-size: 1.3em;
   color: #c44;

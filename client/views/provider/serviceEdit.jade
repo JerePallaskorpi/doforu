@@ -1,0 +1,32 @@
+extends ../layout/layout
+
+block content
+  div#editServiceCard
+    div.contentBox
+      span {{ getCardData }}
+      div.ribbon #[span Luotettava]
+      strong.serviceName(v-text="serviceName")
+      p.description(v-text="serviceDescription")
+      span.price(v-text="servicePrice")
+      span.info 
+        | #[span.infoItem #[i.fa.fa-briefcase] #{results.provider_name}]
+        | #[span.infoItem #[i.fa.fa-map-marker] #{results.city}]
+      div.review
+        span 
+          - if (results.rating_amount != 0)
+            - for(var i = 0; i < 5; i++)
+              - if (Math.round(results.rating) > i)
+                i.fa.fa-star
+              - else
+                i.fa.fa-star-o
+            span #{results.rating} 
+            span.ratingAmount (#{results.rating_amount})
+          - else
+            span Ei arvosteluja        
+      div.logo
+    div#cardForm
+      input(v-model="serviceName" placeholder="Palvelun nimi")
+      input(v-model="serviceDescription" placeholder="Palvelun nimi")
+      input(v-model="servicePrice" placeholder="Palvelun nimi")
+
+

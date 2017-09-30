@@ -71,14 +71,15 @@ app.listen(config.development.port, () => {
   console.log("----------\r\n");
 });
 
-app.post("/todos", (req, res) => {
+app.get("/getCardData", (req, res) => {
+
+  console.log(req);
+  console.log(res);
 
   let todos = [
-    "Passport.js (user_details / provider_details on register)", 
-    "Esim dataa tableihi", 
-    "Lisää kahvia", 
-    "More vue / axios l2", 
-    "Palveluiden lisätiedot, käyttäjien hallinta"
+    "Otsikko",
+    "Pitempi description en jaksa tehä lorem ipsumii",
+    450
   ];
 
   res.send(todos);

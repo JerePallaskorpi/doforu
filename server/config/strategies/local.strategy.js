@@ -27,6 +27,7 @@ module.exports = () => {
       } else {
         if (results.length > 0) {
           
+          // These are usable from res.locals.currentUser
           const user = {
             id: results[0].id,
             email: results[0].email,

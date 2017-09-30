@@ -37,3 +37,26 @@ new Vue({
     }*/
   }
 });
+
+new Vue({
+  el: "#editServiceCard",
+  data: {
+    serviceName: "",
+    serviceDescription: "",
+    servicePrice: ""
+  },
+
+  computed: {
+    getCardData() {
+      axios.get("edit/getCardData")
+      .then(response => {
+        this.serviceName = response.data.name;
+        this.serviceDescription = response.data.description;
+        this.servicePrice = response.data.price;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    }
+  }
+});

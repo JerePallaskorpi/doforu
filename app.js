@@ -89,3 +89,7 @@ app.get("/getCardData", (req, res) => {
 app.get("*", (req, res) => {
   res.render("404");
 });
+
+OS
+  Windows
+  OSX

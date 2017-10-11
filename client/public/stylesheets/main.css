@@ -55,9 +55,6 @@
   padding: 0 10px;
   user-select: none;
 }
-#header ul li:hover {
-  cursor: pointer;
-}
 #registerBox,
 #loginBox {
   border-radius: 5px;

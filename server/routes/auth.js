@@ -68,13 +68,13 @@ router.post("/register", (req, res) => {
 // Login user
 router.post('/login', 
   passport.authenticate('local', { failureRedirect: 'back' }),
-  function(req, res) {
+  (req, res) => {
     req.flash("success", "Succesfully logged in!");
     res.redirect('back');
   });
 
 // Logout user
-router.get("/logout", function(req, res){
+router.get("/logout", (req, res) => {
   req.logout();
   req.flash("success", "Logged out.");
   res.redirect("back");

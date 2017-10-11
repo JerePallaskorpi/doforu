@@ -44,3 +44,5 @@ router.get("/edit-account", authCheck.isLoggedIn, (req, res) => {
     }
   });
 });
+
+module.exports = router;

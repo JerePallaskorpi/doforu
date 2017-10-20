@@ -7,7 +7,7 @@ block content
       div.ribbon #[span Luotettava]
       strong.serviceName(v-text="serviceName")
       p.description(v-text="serviceDescription")
-      span.price(v-text="servicePrice")
+      span.price(v-text="servicePrice + ' €'")
       span.info 
         | #[span.infoItem #[i.fa.fa-briefcase] #{results.provider_name}]
         | #[span.infoItem #[i.fa.fa-map-marker] #{results.city}]

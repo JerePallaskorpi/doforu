@@ -60,7 +60,7 @@ app.use((req, res, next) => {
 app.use("/", indexRoute);
 app.use("/", authRoute);
 app.use("/user", userRoute);
-app.use("/user", providerRoute);
+app.use("/", providerRoute);
 app.use("/services/", servicesRoute);
 app.use("/services/", serviceDetailRoute);
 

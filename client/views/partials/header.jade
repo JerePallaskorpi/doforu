@@ -1,8 +1,8 @@
 strong #[a(href="/") Doforu] 
 ul
   - if (currentUser)
-    li #{success}
-    li #{error}
+    li.successMessage #{success}
+    li.errorMessage #{error}
     - if (currentUser.provider)
       li #[a(href="/user/services") #[i.fa.fa-tags]]
       li #[a(href="/user/edit-account") #[i.fa.fa-user]]

@@ -6,6 +6,7 @@
 @import "imports/landing.styl"
 @import "imports/user.styl"
 @import "imports/ribbon.styl"
+@import "imports/serviceDetail.styl"
 
 html, body
   color black
@@ -24,6 +25,7 @@ a
   color main
   &:hover
     color black
+    cursor pointer
 
 button
   background-color black
@@ -58,7 +60,7 @@ select
   
 #content
   margin 100px auto 0 auto
-  max-width 700px
+  max-width 900px
   padding-bottom 220px
 
 #order
@@ -80,7 +82,13 @@ table
   td
     padding 10px
     border 1px solid black
-  
+
+.errorMessage
+    color red
+    
+.successMessage
+    color green
+     
 @media (max-width 700px)
   
   #content

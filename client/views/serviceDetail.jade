@@ -2,19 +2,32 @@ extends layout/layout
 
 block content
   div#serviceDetail
-    div
-      h1 #{results.service_name}
-      h3 #{results.rating} (#{results.rating_amount} arvostelua)
-    hr
-    div
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci sunt corporis inventore ut quisquam a eos vero dolor ullam non asperiores tempore at illum, iure, ea numquam quod iusto animi!
-    hr
-    div
-      h1 Arvostelut
-      each review in reviews
-        strong #{review.title + " " + review.rating}
-        p #{review.review_date}
-        p #{review.first_name + " " + review.last_name}
-        p #{review.description}
+    div.mainCol
+      div.topNav
+        a(onclick="window.history.back()") #[i.fa.fa-chevron-left] Takaisin hakuun
+      div
+        h1 #{results.service_name}
+        h3 #{results.rating} (#{results.rating_amount} arvostelua)
+      hr
+      div
+        h3 Palvelun Kuvaus
+        p #{results.service_description}
+      hr
+      div
+        h1 Arvostelut
+        each review in reviews
+          strong #{review.title + " " + review.rating}
+          p #{review.review_date}
+          p #{review.first_name + " " + review.last_name}
+          p #{review.description}
+    div.floatCol
+      h3 Huoltokohde
+      input(placeholder="kohde")
+      input(placeholder="osoite")
+      input(placeholder="pinta-ala")
+      h3 Huoltoajankohta
+      input(placeholder="Tämän viikon aikana")
+      button.blue Lähetä tarjouspyyntö
+
 
 

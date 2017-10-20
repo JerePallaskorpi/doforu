@@ -9,5 +9,5 @@ block content
     each result in results
       tr
         td #{ result.serviceName }
-        td #[a(href="services/" + result.serviceId + "/edit") #[i.fa.fa-edit]]
+        td #[a(href="/services/" + result.serviceId + "/edit") #[i.fa.fa-edit]]
         td #[i.fa.fa-remove]

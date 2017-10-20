@@ -8,7 +8,7 @@ const express       = require("express"),
       router        = express.Router();
 
 // Account page route
-router.get("/services", authCheck.isProvider, (req, res) => {
+router.get("/user/services", authCheck.isProvider, (req, res) => {
 
   // Query variables
   const findServices = sql.readFile("findOwnServices");
@@ -27,6 +27,8 @@ router.get("/services", authCheck.isProvider, (req, res) => {
   
 });
 
+// Edit card
+// Check that user owns the service
 router.get("/services/:id/edit", authCheck.isOwnService, (req, res) => {
 
   // Query variables
@@ -62,7 +64,7 @@ router.get("/services/:id/edit", authCheck.isOwnService, (req, res) => {
 
 });
 
-router.get("/services/:id/edit/getCardData", (req, res) => {
+router.get("/services/:id/edit/getCardData", authCheck.isOwnService, (req, res) => {
   
   const findService = "SELECT * FROM service WHERE id = ?";
 

@@ -25,12 +25,13 @@ module.exports = {
         console.log(userId);
 
         // Check if service id matches user id
-        sql.connection.query(verifyId, userId, (error) => {
-          if (error) { 
+        sql.connection.query(verifyId, userId, (error, results) => {
+          if (results.length === 0) { 
             console.log(error);
-            req.flash("error", "Et omista tähhhtä palvelua");
+            req.flash("error", "Et omista tätä palvelua");
             res.redirect("/");
           } else { 
+            console.log(results);
             return next();
           }    
         });

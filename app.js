@@ -67,10 +67,11 @@ app.use("/services/", serviceDetailRoute);
 // Server Connection
 app.listen(config.development.port, () => {
   console.log("\r\n----------");
-  console.log("App running at localhost:" + config.development.port);
+  console.log(`App running at localhost: ${config.development.port}`);
   console.log("----------\r\n");
 });
 
+// TEST VUEJS AXIOS
 app.get("/getCardData", (req, res) => {
 
   console.log(req);

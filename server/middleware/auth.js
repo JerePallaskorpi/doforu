@@ -14,7 +14,7 @@ module.exports = {
         return next();
       }
       req.flash("error", "Et ole palveluntarjoaja");
-      res.redirect("back");
+      res.redirect("/");
     },
     isOwnService: (req, res, next) => {
       if (req.isAuthenticated() && res.locals.currentUser.provider) {

@@ -6,5 +6,5 @@ LEFT JOIN service_review ON service.id = service_review.service_id
 LEFT JOIN service_tag ON service.id = service_tag.service_id 
 LEFT JOIN tag ON service_tag.tag_id = tag.id 
 WHERE service.name LIKE ? || tag.name LIKE ?
-GROUP BY service.name
+GROUP BY service_name
 ORDER BY service.created_at DESC;

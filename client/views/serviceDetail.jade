@@ -4,9 +4,9 @@ block content
   div#serviceDetail
     div.mainCol
       div.topNav
-        a(onclick="window.history.back()") #[i.fa.fa-chevron-left] Takaisin hakuun
+        a(href="/") #[i.fa.fa-chevron-left] Takaisin hakuun
       div
-        h1 #{results.service_name}
+        h1.centered #{results.service_name}
         h3 #{results.rating} (#{results.rating_amount} arvostelua)
       hr
       div
@@ -14,12 +14,15 @@ block content
         p #{results.service_description}
       hr
       div
-        h1 Arvostelut
+        h1.centered Arvostelut
         each review in reviews
-          strong #{review.title + " " + review.rating}
-          p #{review.review_date}
-          p #{review.first_name + " " + review.last_name}
-          p #{review.description}
+          div.reviewSingle
+            h3 #{review.title} 
+              span
+              - for (var i=0;i<review.rating;i++)
+                span *
+            p #{review.first_name + " " + review.last_name}, #{review.review_date}
+            p #{review.description}
     div.floatCol
       h3 Huoltokohde
       input(placeholder="kohde")

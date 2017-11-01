@@ -46,14 +46,14 @@ router.post("/register", (req, res) => {
               res.redirect("back");
             } else {
               passport.authenticate("local")(req, res, () => {
-                 req.flash("success", "Successfully Signed Up! Nice to meet you " + registerInfo.first_name);
+                 req.flash("success", `Successfully Signed Up! Nice to meet you ${registerInfo.first_name}`);
                  res.redirect("back");
               });
             }
           });
         } else {
           passport.authenticate("local")(req, res, () => {
-             req.flash("success", "Successfully Signed Up! Nice to meet you " + registerInfo.first_name);
+             req.flash("success", `Successfully Signed Up! Nice to meet you ${registerInfo.first_name}`);
              res.redirect("back");
           });
         }     

@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
     const insertToSearch = sql.readFile("insertSearch");
     const findServices = sql.readFile("findServices");
     const searchName = {name: req.query.searchName};
-    const name = "%" + searchName.name + "%";
+    const name = `%${searchName.name}%`;
     const nameArray = [name, name];
 
     // Insert search to database

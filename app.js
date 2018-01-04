@@ -79,7 +79,7 @@ app.get("/getCardData", (req, res) => {
 
   let todos = [
     "Otsikko",
-    "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis fugit accusantium porro maxime, soluta voluptatem sequi autem explicabo provident a, eum esse dolorem consequuntur fugiat inventore debitis libero qui, unde!",
+    "Lorem ipsum dolor sit amet.. consectetur adipisicing elit. Blanditiis fugit accusantium porro maxime, soluta voluptatem sequi autem explicabo provident a, eum esse dolorem consequuntur fugiat inventore debitis libero qui, unde!",
     450
   ];
 
